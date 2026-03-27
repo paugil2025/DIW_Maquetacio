@@ -350,12 +350,15 @@ footer > div:first-child {
         align-items: center;
         
     }
+    .linia{
+        flex-direction: column;
+    }
     
     .restaurant_nom{
         display: none;
     }
     .img2{
-        order:-1;
+        order: -1;
     }
     .galeria-flex img { width: 90%; }
     .img-arrodonida{
