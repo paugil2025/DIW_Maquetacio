@@ -132,13 +132,14 @@ h2 {
     display: grid;
     /* Definim les àrees per maquetar el layout */
     grid-template-areas: 
-        "titol titol"
-        "m1 text1"
-        "m1 img1"
-        "m2 text2"
-        "m2 img2";
+        "titol titol titol"
+        "m1 text1 text1"
+        "m1 img1 img2"
+        "m2 text2 text2"
+        "m2 img3 img4";
+        
     gap: 1.5rem;
-    grid-template-columns: 1fr 2fr; /* Columna esquerra més petita */
+    grid-template-columns: 1fr 1.5fr 1.5fr; /* Columna esquerra més petita */
 }
 
 /* Assignació d'elements a les àrees del grid */
@@ -164,6 +165,7 @@ h2 {
     text-align: justify; 
 }
 .img-menu1 { grid-area: img1; }
+.img-menu1-2 { grid-area: img2; }
 
 .titol-menu2 { 
     grid-area: m2; 
@@ -178,8 +180,11 @@ h2 {
     font-size: 1.1rem; 
     text-align: justify;
 }
-.img-menu2 { 
-    grid-area: img2; 
+.img1-menu2 { 
+    grid-area: img3; 
+}
+.img2-menu2 { 
+    grid-area: img4; 
 }
 
 /* Text superposat a la imatge */
@@ -320,23 +325,29 @@ footer > div:first-child {
 }
 /* Responsive per a tablets */
 @media (max-width: 768px) {
-    .container{
+    .container{ /* HEADER*/
         justify-content: center;
         
     }
+    .linia1{ /* PRIMERA PART */
+        flex-direction: column;
+    }
+    .linia p{
+        width: 100%;
+    }
     .restaurant_nom{
         justify-content: center;
+        left: 30%;
     }
-    .logo{
-        display: none;
-    }
-    
-    .img2{
-        order:-1;
+    .img2{ /* Canviem el lloc de la imatge*/
+        order: -1;
     }
     .galeria-flex img { width: 45%; }     /* 2 per fila en pantalles petites */
-    .img-arrodonida{
+    .img-arrodonida{ /* Cambio el tamany de les imatges arrodonides */
         width: 100%;
+    }
+    .logo{ /*Footer*/ 
+        display: none;
     }
     footer{
         justify-content: center;
@@ -345,42 +356,31 @@ footer > div:first-child {
 }
 /* Responsive per a mòbils */
 @media (max-width: 576px) {
-    .container{
+    .container{ /* HEADER */
         flex-direction: column;
         align-items: center;
         
     }
-    .linia{
+    .linia{  /* Sobre nosaltres*/
         flex-direction: column;
     }
     
-    .restaurant_nom{
+    .restaurant_nom{ /* Text sobre la imatge*/
         display: none;
     }
-    .img2{
-        order: -1;
-    }
-    .galeria-flex img { width: 90%; }
-    .img-arrodonida{
-        width: 100%;
-    }
-    .grup-form { width: 100%; }
-
-    .carta-grid {
+    .galeria-flex img { width: 90%; }   /* imatges de la galeria */
+    
+    .carta-grid { /* CARTA*/
         grid-template-columns: 1fr;
         grid-template-areas: 
-            "titol"
-            "m1" "text1" "img1"
-            "m2" "text2" "img2";
+        "titol"
+        "m1" "text1" "img1" "img2" 
+        "m2" "text2" "img3" "img4";
     }
-    .grup-form { width: 45%; }
+    .grup-form { width: 45%; }    /* FORMULARI */
     .descripcio-form{ width: 100%;}
-}
-
-
-/*  RESPONSIVE (EVITAR SCROLL HORITZONTAL) */
-@media (max-width: 900px) {
-    
-
-    
+    .boto-form{ 
+        width: 100%;
+        justify-content: center;
+    }
 }
