@@ -318,28 +318,51 @@ footer > div:first-child {
     height: auto;
     border-radius: 5px; 
 }
-
-/* Responsive per a mòbils */
-@media (max-width: 600px) {
-    footer {
-        flex-direction: column; /* Posa els elements un sota l'altre */
-        gap: 1.5rem;
-        text-align: center;
+/* Responsive per a tablets */
+@media (max-width: 768px) {
+    .container{
+        justify-content: center;
+        
+    }
+    .restaurant_nom{
+        justify-content: center;
+    }
+    .logo{
+        display: none;
     }
     
-    footer > div:first-child {
-        flex-direction: column; /* Apila el telèfon sota el correu */
-        gap: 1rem;
+    .img2{
+        order:-1;
+    }
+    .galeria-flex img { width: 45%; }     /* 2 per fila en pantalles petites */
+    .img-arrodonida{
+        width: 100%;
+    }
+    footer{
+        justify-content: center;
     }
     
-    .logo {
-        order: 0; /* Torna a l'ordre normal en mòbil si queda millor a dalt */
-    }
 }
+/* Responsive per a mòbils */
+@media (max-width: 576px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    .restaurant_nom{
+        display: none;
+    }
+    .img2{
+        order:-1;
+    }
+    .galeria-flex img { width: 90%; }
+    .img-arrodonida{
+        width: 100%;
+    }
+    .grup-form { width: 100%; }
 
-/*  RESPONSIVE (EVITAR SCROLL HORITZONTAL) */
-@media (max-width: 900px) {
-    .linia { flex-direction: column; }
     .carta-grid {
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -347,7 +370,14 @@ footer > div:first-child {
             "m1" "text1" "img1"
             "m2" "text2" "img2";
     }
-    .restaurant_nom { max-width: 80%; }
-    .galeria-flex img { width: 45%; } /* 2 per fila en pantalles petites */
-    .grup-form { width: 100%; }
+    .grup-form { width: 45%; }
+    .descripcio-form{ width: 100%;}
+}
+
+
+/*  RESPONSIVE (EVITAR SCROLL HORITZONTAL) */
+@media (max-width: 900px) {
+    
+
+    
 }
