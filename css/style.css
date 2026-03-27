@@ -379,7 +379,7 @@ footer > div:first-child {
     }
     .grup-form { width: 45%; }    /* FORMULARI */
     .descripcio-form{ width: 100%;}
-    .boto-form{ 
+    .boto-form button{ 
         width: 100%;
         justify-content: center;
     }
