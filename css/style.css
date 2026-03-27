@@ -346,12 +346,17 @@ footer > div:first-child {
     .img-arrodonida{ /* Cambio el tamany de les imatges arrodonides */
         width: 100%;
     }
+    .boto-form button{ /* Boton formulario */
+        width: 100%;
+        justify-content: center;
+    }
     .logo{ /*Footer*/ 
         display: none;
     }
     footer{
         justify-content: center;
     }
+    
     
 }
 /* Responsive per a mòbils */
@@ -379,8 +384,5 @@ footer > div:first-child {
     }
     .grup-form { width: 45%; }    /* FORMULARI */
     .descripcio-form{ width: 100%;}
-    .boto-form button{ 
-        width: 100%;
-        justify-content: center;
-    }
+    
 }
