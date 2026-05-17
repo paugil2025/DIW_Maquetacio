@@ -81,14 +81,30 @@
         <section id="galeria">
             <h2>Galeria d'imatges</h2>
             <div class="galeria-flex">
-                <img src="https://miamicanpons.com/wp-content/uploads/2023/02/20220130_145211.jpg" alt="Galeria 1">
-                <img src="https://miamicanpons.com/wp-content/uploads/2023/02/FM-8.jpg" alt="Galeria 2">
-                <img src="https://miamicanpons.com/wp-content/uploads/2023/02/FM-22.jpg" alt="Galeria 3">
-                <img src="https://miamicanpons.com/wp-content/uploads/2023/02/FM-14.jpg" alt="Galeria 4">
-                <img src="https://miamicanpons.com/wp-content/uploads/2023/02/FM-9.jpg" alt="Galeria 5">
-                <img src="https://miamicanpons.com/wp-content/uploads/2023/02/Taco_Polp-e1677059523650.jpg" alt="Galeria 6">
-                <img src="https://miamicanpons.com/wp-content/uploads/2023/02/22-RESTAURANT-MIAMI-PLATS-00772-1.jpg" alt="Galeria 7">
-                <img src="https://miamicanpons.com/wp-content/uploads/2023/02/w_DSC2421.jpg" alt="Galeria 8">
+                <div class="item-galeria">
+                    <img src="https://miamicanpons.com/wp-content/uploads/2023/02/20220130_145211.jpg" alt="Galeria 1">
+                </div>
+                <div class="item-galeria">
+                    <img src="https://miamicanpons.com/wp-content/uploads/2023/02/FM-8.jpg" alt="Galeria 2">
+                </div>
+                <div class="item-galeria">
+                    <img src="https://miamicanpons.com/wp-content/uploads/2023/02/FM-22.jpg" alt="Galeria 3">
+                </div>
+                <div class="item-galeria">
+                    <img src="https://miamicanpons.com/wp-content/uploads/2023/02/FM-14.jpg" alt="Galeria 4">
+                </div>
+                <div class="item-galeria">    
+                    <img src="https://miamicanpons.com/wp-content/uploads/2023/02/FM-9.jpg" alt="Galeria 5">
+                </div>
+                <div class="item-galeria">
+                    <img src="https://miamicanpons.com/wp-content/uploads/2023/02/Taco_Polp-e1677059523650.jpg" alt="Galeria 6">
+                </div>
+                <div class="item-galeria">
+                    <img src="https://miamicanpons.com/wp-content/uploads/2023/02/22-RESTAURANT-MIAMI-PLATS-00772-1.jpg" alt="Galeria 7">
+                </div>
+                <div class="item-galeria">
+                    <img src="https://miamicanpons.com/wp-content/uploads/2023/02/w_DSC2421.jpg" alt="Galeria 8">
+                </div>
             </div>
         </section>
 
@@ -121,6 +137,25 @@
             </form>
         </section>
 
+        <section id="video-apartat">
+        <h2 class="titol-video">Vídeos del restaurant</h2>
+        <div class="video-container">
+            <video id="meuVideo" width="100%" muted>
+                <source src="video/videoplayback.mp4" type="video/mp4">
+                El teu navegador no suporta vídeos.
+            </video>
+
+            <div class="capa-controls">
+                <div class="icones-grup">
+                    <span class="material-symbols-outlined" id="btnPlay" onclick="reproduir()">play_circle</span>
+                    <span class="material-symbols-outlined" id="btnPause" onclick="pausar()">pause_circle</span>
+                    <span class="material-symbols-outlined" id="btnVolUp" onclick="ambVolum()">volume_up</span>
+                    <span class="material-symbols-outlined" id="btnVolOff" onclick="mutar()">volume_off</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
     <footer>
@@ -136,6 +171,25 @@
             </div>
         </div>
     </footer>
-   
+
+   <script>
+    const video = document.getElementById("meuVideo");
+
+    function reproduir() {
+        video.play(); // El vídeo es posa en marxa
+    }
+
+    function pausar() {
+        video.pause(); // El vídeo es pausa 
+    }
+
+    function ambVolum() {
+        video.muted = false; // El vídeo es posa amb volume
+    }
+
+    function mutar() {
+        video.muted = true; // El vídeo es posa en silenci 
+    }
+</script>
 </body>
 </html>
