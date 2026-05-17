@@ -253,10 +253,7 @@ h2 {
     border: 2px solid black; /* El borde se queda en el marco */
 }
 
-.item-galeria:hover img {
-    transform: scale(1.1) rotate(-3deg); /* La imagen crece pero el div la corta */
-    filter: brightness(0.4);
-}
+
 
 /*  FORMULARI   */
 .formulari {
@@ -454,19 +451,83 @@ footer > div:first-child {
     
 }
 
+
+
+/* Exercici 1: Transició de la galeria afegint grayscale com demana la pràctica */
+.item-galeria:hover img {
+    transform: scale(1.1) rotate(-3deg);
+    filter: brightness(0.7) grayscale(100%); /* Afegit grayscale obligatori */
+}
+
+/* Exercici 1.2: Transició lliure pròpia utilitzant 3 propietats al botó flotant */
+.boto-flotant {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-boto);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* 3 propietats */
+    animation: polsBoto 4s infinite ease-in-out; /* Exercici 2.2: Segona animació lliure */
+}
+
+.boto-flotant:hover {
+    background-color: #ff9900;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Exercici 2.1: Animació del text de la capçalera (Acaba en color blanc demanat) */
 @keyframes aparicioText {
     0% {
         opacity: 0;
-        transform: translateY(50px); /* Empieza más abajo */
+        transform: translateY(50px);
         color: rgb(255, 166, 0);
     }
     50% {
         opacity: 0.5;
-        color: rgb(174, 113, 0);
+        color: rgb(255, 115, 0);
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Posición final original */
-        color: black; /*En lugar de white porque sino no se ve*/
+        transform: translateY(0);
+        color: white; /* Color blanc obligatori segons enunciat */
+    }
+}
+
+/* Modificació del contenidor per contrastar amb el text blanc final */
+.restaurant_nom {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Canviat a fosc per contrastar el text blanc */
+    padding: 2rem;
+    max-width: 40%;
+    border: 1px solid white;
+    animation: aparicioText 3s ease-out forwards;
+}
+
+/* Exercici 2.2: Segona animació lliure amb 4 frames (0%, 30%, 70%, 100%) i 3 propietats */
+@keyframes polsBoto {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(26, 43, 76, 0.7);
+    }
+    30% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(26, 43, 76, 0);
+    }
+    70% {
+        transform: scale(0.98);
+        box-shadow: 0 0 0 5px rgba(26, 43, 76, 0.2);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(26, 43, 76, 0);
     }
 }
